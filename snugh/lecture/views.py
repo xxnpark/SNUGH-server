@@ -303,7 +303,7 @@ class PlanViewSet(viewsets.GenericViewSet):
         if not user.is_authenticated:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
-        plan = get_object_or_404(Plan, pk=pk)
+        plan = get_object_or_404(Plan, id=pk)
         post_list = request.data.get("post_list", [])
         delete_list = request.data.get("delete_list", [])
 
